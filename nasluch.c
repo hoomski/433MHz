@@ -17,7 +17,7 @@
 
 int main(int argc, char* argv[])
 {
-  unsigned char Temp;
+  char Temp;
   rfm69_initialize(FREQUENCY, NODEID, NETWORKID);
   printf("Inicjalizacja modułu RFM69 ...... OK\n");
   Temp = pomiarTemp();

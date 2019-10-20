@@ -10,7 +10,7 @@
 #include <errno.h>
 #include <unistd.h>
 
-unsigned char pomiarTemp(void){
+char pomiarTemp(void){
     rfm69_writeReg(REG_TEMP1, RF_TEMP1_MEAS_STATR);
     while(rfm69_readReg(REG_TEMP1) & RF_TEMP1_MEAS_RUNNING);
     return rfm69_readReg(REG_TEMP2);
