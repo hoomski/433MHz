@@ -20,6 +20,9 @@ int main(int argc, char* argv[])
   char Temp;
   rfm69_initialize(FREQUENCY, NODEID, NETWORKID);
   printf("Inicjalizacja modułu RFM69 ...... OK\n");
+  usleep(10);
+  rfm69_setMode(RF69_MODE_RX);
+  usleep(10);
   Temp = pomiarTemp();
   printf("Pomiar temperatury z RFM69:%d, %u, %x\n", Temp, Temp, Temp);
 }
