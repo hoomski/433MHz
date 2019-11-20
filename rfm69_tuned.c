@@ -18,7 +18,7 @@
 
 #define SPI_SPEED 1000000
 #define SPI_DEVICE 0
-#define SUSPEND 10
+#define SUSPEND 100000
 
 char _mode;       // current transceiver state
 char _address;

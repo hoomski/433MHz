@@ -1,4 +1,5 @@
 #include "rfm69.h"
+#include "rfm69registers.h"
 #include <wiringPi.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,9 +21,10 @@ int main(int argc, char* argv[])
   char Temp;
   rfm69_initialize(FREQUENCY, NODEID, NETWORKID);
   printf("Inicjalizacja modułu RFM69 ...... OK\n");
-  usleep(10);
+  usleep(1000);
   rfm69_setMode(RF69_MODE_RX);
-  usleep(10);
+  usleep(10000);
+  printf("Rejestr OPMODE: %x \n", rfm69_readReg(REG_OPMODE));
   Temp = pomiarTemp();
   printf("Pomiar temperatury z RFM69:%d, %u, %x\n", Temp, Temp, Temp);
 }
